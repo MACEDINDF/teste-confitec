@@ -120,21 +120,14 @@ df = df.drop_duplicates()
 # Substituir "TBA" por "a ser anunciado" na coluna "Seasons"
 df['Seasons'] = df['Seasons'].replace('TBA', 'a ser anunciado')
 
-
-
 # In[14]:
-
 
 #Neste exemplo, a função drop_duplicates() é usada para remover linhas duplicadas do DataFrame df.
 #Em seguida, a função replace() é usada para substituir todos os valores "TBA" na coluna "Seasons"por "a ser anunciado".
 #Desta forma o DataFrame df terá as linhas duplicadas removidas e os valores "TBA" na coluna "Seasons" 
 #substituídos por "a ser anunciado".
 
-print(df)
+df.write.format('csv').option('header','true').mode("append").save("s3://arn:aws:s3:sa-east-1:227804544926:accesspoint/teste-confitec/teste/")
 
-
-# In[ ]:
-
-
-
+#https://testespark-confitec.s3.sa-east-1.amazonaws.com/1.csv
 
